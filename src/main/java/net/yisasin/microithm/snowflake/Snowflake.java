@@ -14,7 +14,7 @@ import java.util.Date;
  * </pre>
  *
  *
- * @author maxiaofeng
+ * @author maxiaofeng[yisasin@163.com]
  */
 public class Snowflake {
 

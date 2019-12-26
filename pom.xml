@@ -8,6 +8,12 @@
     <artifactId>microithm</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
+    <packaging>jar</packaging>
+    <name>microithm</name>
+    <description>Microithm is for collecting small and sophisticated algorithm implementations</description>
+
+    <url>https://github.com/Yisasin/microithm</url>
+
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
@@ -16,18 +22,19 @@
     </licenses>
     <developers>
         <developer>
+            <id>Yisasin</id>
             <name>Yisasin</name>
             <email>yisasin@163.com</email>
-            <url>github.com/Yisasin</url>
+            <url>https://github.com/Yisasin</url>
         </developer>
     </developers>
     <scm>
-        <connection>scm:git@github.com:Yisasin/microithm.git</connection>
-        <developerConnection>scm:git@github.com:Yisasin/microithm.git</developerConnection>
-        <url>git@github.com:Yisasin/microithm.git</url>
+        <url>https://github.com/Yisasin/microithm</url>
+        <connection>scm:git:https://git@github.com/Yisasin/microithm.git</connection>
     </scm>
 
     <dependencies>
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -39,6 +46,7 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
+            <scope>test</scope>
         </dependency>
 
         <dependency>

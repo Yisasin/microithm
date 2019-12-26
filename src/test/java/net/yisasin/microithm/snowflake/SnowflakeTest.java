@@ -2,10 +2,14 @@ package net.yisasin.microithm.snowflake;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
@@ -14,10 +18,15 @@ import java.util.concurrent.Executors;
 @Slf4j
 public class SnowflakeTest {
 
+    private Snowflake idGenerator;
+
+    @Before
+    public void init() {
+        idGenerator = new Snowflake(13, 17);
+    }
+
     @Test
     public void nextId() {
-
-        final Snowflake idGenerator = new Snowflake(13, 17);
 
         int expectSize = 1000000;
         // 线程池并行执行 expectSize 次ID生成
@@ -42,6 +51,11 @@ public class SnowflakeTest {
     }
 
     @Test
-    public void convert() {
+    public void convert() throws ParseException {
+
+        SnowMeta convert = idGenerator.convert(1L);
+        Date generationTime = convert.getGenerationTime();
+
+        Assert.assertEquals(new SimpleDateFormat("yyyy-MM-dd").parse("2020-01-01"), generationTime);
     }
 }

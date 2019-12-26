@@ -18,8 +18,8 @@ import java.util.Date;
  */
 public class Snowflake {
 
-    // 初始时间截 (2017-01-01)
-    private static final long INITIAL_TIME_STAMP = 1483200000000L;
+    // 初始时间截 (2020-01-01)
+    private static final long INITIAL_TIME_STAMP = 1577808000000L;
 
     // 机器ID所占的位数
     private static final long WORKER_ID_BITS = 5L;
